@@ -36,7 +36,7 @@ function Home() {
   return (
     <div className='w-full absolute'>
       <header className='w-full h-[9vh] lg:h-[11vh] bg-[#2f3541] pt-[1vh] px-[5vw] flex justify-between fixed z-2'>
-        <img src="/src/image-removebg-preview (12).png" alt="loading" className='w-[20vw] sm:w-[17vw] md:w-[15vw] lg:w-[12vw] h-[6vh]' />
+        <img src="/Logo.png" alt="loading" className='w-[20vw] sm:w-[17vw] md:w-[15vw] lg:w-[12vw] h-[6vh]' />
         <Link to="/add">
           <button type='submit' className='rounded-1 w-[3rem] h-[6vh] bg-[#181b20] text-[#eeeeee]'><i className="fa-solid fa-user-plus"></i></button>
         </Link>

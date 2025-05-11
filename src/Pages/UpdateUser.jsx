@@ -48,7 +48,7 @@ const UpdateUser = () => {
         <Link to="/" className='no-underline'>
           <button className='rounded-1 w-[5rem] h-[6vh] bg-[#181b20] text-[#eeeeee] flex items-center justify-center gap-1'><i className="fa-solid fa-backward"> </i>Back</button>
         </Link>
-        <img src="/src/image-removebg-preview (12).png" alt="loading" className='w-[20vw] sm:w-[17vw] md:w-[15vw] lg:w-[12vw] h-[6vh]' />
+        <img src="/Logo.png" alt="loading" className='w-[20vw] sm:w-[17vw] md:w-[15vw] lg:w-[12vw] h-[6vh]' />
       </header>
         <h2 className='text-center py-[2rem] text-shadow-lg'>Update User</h2>
         <div className='w-[300px] h-[50vh] rounded-2 border bg-[#fff] shadow-lg'>
