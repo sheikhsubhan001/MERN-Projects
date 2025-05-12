@@ -44,7 +44,7 @@ function Home() {
       <div className='w-full bg-[#eeeeee] pt-[9vh] border-1 py-[0.3rem] fixed z-1'>
         <h3 className='text-center py-[1rem]'>User Records</h3>
       </div>
-      <div className='bg-[#dddddd] w-full px-[5vw] pt-[9rem] sm:pt-[8rem] pb-[3rem] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 overflow-y-auto  overflow-auto scrollbar-hide'>
+      <div className='bg-[#dddddd] w-full px-[5vw] pt-[10rem] sm:pt-[8rem] pb-[3rem] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 overflow-y-auto  overflow-auto scrollbar-hide'>
         {/* records */}
         {Array.isArray(users) && users.map((user, index) => {
           return (
