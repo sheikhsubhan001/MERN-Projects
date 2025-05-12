@@ -21,7 +21,7 @@ const AddUser = () => {
 
     const submitform = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:7000/GoTo/Useradd", user)
+        await axios.post("https://mern-backend-bay.vercel.app/GoTo/Useradd", user)
             .then((response) => {
                 toast.success(response.data.message, { position: "top-center" });
                 Navigate("/");

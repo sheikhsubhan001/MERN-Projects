@@ -20,7 +20,7 @@ const UpdateUser = () => {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:7000/GoTo/getsingle/${id}`)
+    axios.get(`https://mern-backend-bay.vercel.app/GoTo/getsingle/${id}`)
       .then((response) => {
         setUser(response.data.UserExist);
       })
@@ -31,7 +31,7 @@ const UpdateUser = () => {
 
   const submitForm = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:7000/GoTo/UpdateUser/${id}`, user)
+    await axios.put(`https://mern-backend-bay.vercel.app/GoTo/UpdateUser/${id}`, user)
       .then((res) => {
         toast.success(res.data.message);
         navigate("/");

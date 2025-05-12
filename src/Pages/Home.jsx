@@ -11,7 +11,7 @@ function Home() {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const res = await axios.get("http://localhost:7000/GoTo/getUser");
+        const res = await axios.get("https://mern-backend-bay.vercel.app/GoTo/getUser");
         setUsers(res.data.UserData);
       } catch (error) {
         console.log("Error in Fetching ", error);
@@ -21,7 +21,7 @@ function Home() {
   }, []);
 
   const DeleteUser = async (userId) => {
-    await axios.delete(`http://localhost:7000/GoTo/DeleteUser/${userId}`)
+    await axios.delete(`https://mern-backend-bay.vercel.app/GoTo/DeleteUser/${userId}`)
       .then((response) => {
         setUsers((prevUser) => prevUser.filter((user) => user._id !== userId))
         toast.success(response.data.message, { position: "top-center" })
