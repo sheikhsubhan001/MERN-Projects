@@ -3,8 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import AddUser from './Pages/AddUser';
 import UpdateUser from './Pages/UpdateUser';
-import "C:/Users/ssm15/Desktop/CRUD/FRONT/todolist/src/App.css"
-
+import "../public/App.css";
 
 
 function App() {
