@@ -28,10 +28,11 @@ const AddUser = () => {
                 toast.success(response.data.message, { position: "top-center" });
                 Navigate("/");
             })
-            .catch((Error) => {
-                toast.error(Error.message, { position: "top-center" });
+            .catch((Err) => {
+                console.log(Err);
+                toast.error(Err.response?.data?.message , { position: "top-center" });
             });
-            setLoading(false);
+        setLoading(false);
     }
     return (
         <div className='w-full h-[100vh] absolute flex flex-col items-center bg-[#c5c5c5]'>
@@ -43,8 +44,8 @@ const AddUser = () => {
             </header>
             {/* <div className='border-1 '> */}
             <h2 className='Frijole text-center py-[2rem] text-shadow-lg'>Add New User</h2>
-            <div className='w-[300px] h-[50vh] xs:h-[55vh] rounded-2 border bg-[#fff] shadow-lg'>
-                <form className='flex flex-col items-center gap-[1.8vh] mt-[2rem]' onSubmit={submitform}>
+            <div className='w-[300px] h-[50vh] xs:h-[55vh] rounded-2 bg-[#fff] shadow-lg flex justify-center'>
+                <form className='flex flex-col items-center gap-[1.8vh] mt-[2rem]  w-[13rem]' onSubmit={submitform}>
                     <label htmlFor="name" className='font-bold'>Name:
                         <input className='form-control w-auto' type="text" onChange={inputhandler} id='name' name='name' required placeholder='Enter your Name...' />
                     </label>
@@ -57,13 +58,16 @@ const AddUser = () => {
                         <input className='form-control w-auto' type="text" onChange={inputhandler} required id='address' name='address' placeholder='Enter Address' />
                     </label>
 
-                    <button className='bg-[#0000Ff] text-white my-[50px] w-[5.5rem] h-[2.5rem] rounded-2'>
-                        {isLoading ? (
+                    {isLoading ? (
+                        <button className='bg-gray-500 text-white my-[50px] w-full h-[2.5rem] rounded-2'>
                             <span className='loading loading-dots loading-lg'></span>
-                        ) : (
-                            <span>Submit</span>
-                        )}
                         </button>
+
+                    ) : (
+                        <button className='bg-[#0000Ff] text-white my-[50px] w-full h-[2.5rem] rounded-2'>
+                            <span>Submit</span>
+                        </button>
+                    )}
                 </form>
             </div>
             {/* </div> */}

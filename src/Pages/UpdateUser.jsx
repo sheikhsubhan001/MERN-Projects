@@ -54,8 +54,8 @@ const UpdateUser = () => {
         <img src="/Logo.png" alt="loading" className='w-[20vw] sm:w-[17vw] md:w-[15vw] lg:w-[12vw] h-[6vh]' />
       </header>
       <h2 className='Frijole text-center py-[2rem] text-shadow-lg'>Update User</h2>
-      <div className='w-[300px] h-[50vh] xs:h-[55vh] rounded-2 border bg-[#fff] shadow-lg'>
-        <form className='flex flex-col items-center gap-[1.8vh] mt-[25px]' onSubmit={submitForm}>
+      <div className='w-[300px] h-[50vh] xs:h-[55vh] rounded-2 border bg-[#fff] shadow-lg flex justify-center'>
+        <form className='flex flex-col items-center gap-[1.8vh] mt-[25px] w-[13rem]' onSubmit={submitForm}>
           <label htmlFor="name" className='font-bold'>Name:
             <input
               className='form-control w-auto'
@@ -95,13 +95,17 @@ const UpdateUser = () => {
             />
           </label>
 
-          <button className='bg-[#0000Ff] text-white my-[50px] w-[5.5rem] h-[2.5rem] rounded-2' value="update">
-            {isLoading ? (
+
+          {isLoading ? (
+            <button className='bg-gray-500 text-white my-[50px] w-full h-[2.5rem] rounded-2' value="update">
               <span className='loading loading-dots loading-lg'></span>
-            ) : (
+            </button>
+
+          ) : (
+            <button className='bg-[#0000Ff] text-white my-[50px] w-full h-[2.5rem] rounded-2' value="update">
               <span>Update</span>
-            )}
-          </button>
+            </button>
+          )}
         </form>
       </div>
     </div>
