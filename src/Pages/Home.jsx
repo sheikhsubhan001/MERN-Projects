@@ -42,7 +42,7 @@ function Home() {
 
 
   return (
-    <div className='w-full absolute min-h-screen bg-[#eeeeee]'>
+    <div className='w-full absolute min-h-screen bg-[#dddddd]'>
       <header className='w-full h-[9vh] lg:h-[11vh] bg-[#1d232a] pt-[1vh] px-[5vw] flex justify-between fixed z-2'>
         <img src="/Logo.png" alt="loading" className='w-[20vw] sm:w-[17vw] md:w-[15vw] lg:w-[12vw] h-[6vh]' />
         <Link to="/add">
@@ -54,6 +54,16 @@ function Home() {
       </div>
       <div className='bg-[#dddddd] w-full px-[5vw] pt-[10rem] sm:pt-[8rem] pb-[4rem] xs:pb-[3rem] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 overflow-y-auto  overflow-auto scrollbar-hide'>
         {/* records */}
+        {
+          users.length===0 ? (
+            <div className='flex flex-col justify-center mt-[2rem] items-center '>
+              <img src="/No Data.png" className='w-[10rem]' alt="No Data Found" />
+              <h3 className='pt-[1rem]'>Insert New Record !</h3>
+            </div>
+          ) : (
+            <div></div>
+          )
+        }
 
         {isAnimate ? (
           [...Array(3)].map((_, i) => (
