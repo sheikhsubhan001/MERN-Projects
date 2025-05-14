@@ -103,7 +103,7 @@ function Home() {
                     </div>
                     <h4 className='text-wrap'>{user.name}</h4>
                     <h6 className='text-wrap'>{user.email}</h6>
-                    <p className=' text-wrap pt-[0.5rem]'>{user.address}</p>
+                    <p className=' text-wrap pt-[0.5rem] line-clamp-2'>{user.address}</p>
                   </div>
                 )
                 )
