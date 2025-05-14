@@ -56,7 +56,7 @@ function Home() {
         {/* records */}
         {
           users.length === 0 ? (
-            <div className='flex flex-col justify-center mt-[2rem] items-center '>
+            <div className='h-[60vh] flex flex-col justify-center justify-center items-center '>
               <img src="/No Data.png" className='w-[10rem]' alt="No Data Found" />
               <h3 className='pt-[1rem]'>Insert New Record !</h3>
             </div>
