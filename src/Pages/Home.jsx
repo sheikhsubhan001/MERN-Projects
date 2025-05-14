@@ -76,7 +76,7 @@ function Home() {
             <div key={index} className='mt-[1rem] h-[13.5rem] p-4 bg-white rounded-lg shadow-md'>
               <div className='flex justify-between'>
                 <h5>{index + 1})</h5>
-                <div className='flex items-center gap-3'>
+                <div className='flex items-center w-[4rem] gap-3'>
                   <Link to={`/Update/${user._id}`}>
                     <button>
                       <i className="text-[1.3rem] fa-solid fa-pen-to-square"></i>
