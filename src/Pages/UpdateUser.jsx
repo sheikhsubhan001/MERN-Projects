@@ -47,14 +47,14 @@ const UpdateUser = () => {
 
   return (
     <div className='w-full h-[100vh] absolute flex flex-col items-center bg-[#c5c5c5]'>
-      <header className='w-full h-[9vh] lg:h-[11vh] bg-[#2f3541] pt-[1vh] px-[5vw] flex justify-between'>
+      <header className='w-full h-[9vh] lg:h-[11vh] bg-[#1d232a] pt-[1vh] px-[5vw] flex justify-between'>
         <Link to="/" className='no-underline'>
-          <button className='rounded-1 w-[5rem] h-[6vh] bg-[#181b20] text-[#eeeeee] flex items-center justify-center gap-1'><i className="fa-solid fa-backward"> </i>Back</button>
+          <button className='rounded-1 w-[5rem] h-[6vh] bg-gray-700 text-[#eeeeee] flex items-center justify-center gap-1'><i className="fa-solid fa-backward"> </i>Back</button>
         </Link>
         <img src="/Logo.png" alt="loading" className='w-[20vw] sm:w-[17vw] md:w-[15vw] lg:w-[12vw] h-[6vh]' />
       </header>
       <h2 className='text-center py-[2rem] text-shadow-lg'>Update User</h2>
-      <div className='w-[300px] h-[50vh] rounded-2 border bg-[#fff] shadow-lg'>
+      <div className='w-[300px] h-[50vh] xs:h-[55vh] rounded-2 border bg-[#fff] shadow-lg'>
         <form className='flex flex-col items-center gap-[1.8vh] mt-[25px]' onSubmit={submitForm}>
           <label htmlFor="name" className='font-bold'>Name:
             <input

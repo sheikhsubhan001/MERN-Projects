@@ -35,9 +35,9 @@ const AddUser = () => {
     }
     return (
         <div className='w-full h-[100vh] absolute flex flex-col items-center bg-[#c5c5c5]'>
-            <header className='w-full h-[9vh] lg:h-[11vh] bg-[#2f3541] pt-[1vh] px-[5vw] flex justify-between'>
+            <header className='w-full h-[9vh] lg:h-[11vh] bg-[#1d232a] pt-[1vh] px-[5vw] flex justify-between'>
                 <Link to="/" className='no-underline'>
-                    <button className='rounded-1 w-[5rem] h-[6vh] bg-[#181b20] text-[#eeeeee] flex items-center justify-center gap-1'><i className="fa-solid fa-backward"> </i>Back</button>
+                    <button className='rounded-1 w-[5rem] h-[6vh] bg-gray-700 text-[#eeeeee] flex items-center justify-center gap-1'><i className="fa-solid fa-backward"> </i>Back</button>
                 </Link>
                 <img src="/Logo.png" alt="loading" className='w-[20vw] sm:w-[17vw] md:w-[15vw] lg:w-[12vw] h-[6vh]' />
             </header>

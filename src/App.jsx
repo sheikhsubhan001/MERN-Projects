@@ -1,9 +1,9 @@
-import { } from 'react'
+import {} from 'react';
+import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import AddUser from './Pages/AddUser';
 import UpdateUser from './Pages/UpdateUser';
-import "../public/App.css";
 
 
 function App() {
