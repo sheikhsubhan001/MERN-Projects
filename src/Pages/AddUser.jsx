@@ -42,7 +42,7 @@ const AddUser = () => {
                 <img src="/Logo.png" alt="loading" className='w-[20vw] sm:w-[17vw] md:w-[15vw] lg:w-[12vw] h-[6vh]' />
             </header>
             {/* <div className='border-1 '> */}
-            <h2 className='text-center py-[2rem] text-shadow-lg'>Add New User</h2>
+            <h2 className='Frijole text-center py-[2rem] text-shadow-lg'>Add New User</h2>
             <div className='w-[300px] h-[50vh] xs:h-[55vh] rounded-2 border bg-[#fff] shadow-lg'>
                 <form className='flex flex-col items-center gap-[1.8vh] mt-[2rem]' onSubmit={submitform}>
                     <label htmlFor="name" className='font-bold'>Name:
