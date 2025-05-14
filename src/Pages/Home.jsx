@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   const [users, setUsers] = useState([]);
+  const [isLoading, setLoading] = useState(false);
+  const [LoadingId, setLoadingId] = useState();
 
   useEffect(() => {
     const fetchdata = async () => {
@@ -21,6 +23,8 @@ function Home() {
   }, []);
 
   const DeleteUser = async (userId) => {
+    setLoadingId(userId);
+    setLoading(true);
     await axios.delete(`https://mern-backend-bay.vercel.app/GoTo/DeleteUser/${userId}`)
       .then((response) => {
         setUsers((prevUser) => prevUser.filter((user) => user._id !== userId))
@@ -30,9 +34,10 @@ function Home() {
         toast.error(error.message, { position: "top-center" });
         console.log(error);
       })
-
-
+    setLoading(false);
   }
+
+
   return (
     <div className='w-full absolute'>
       <header className='w-full h-[9vh] lg:h-[11vh] bg-[#2f3541] pt-[1vh] px-[5vw] flex justify-between fixed z-2'>
@@ -58,7 +63,13 @@ function Home() {
                     </button>
                   </Link>
                   <button onClick={() => DeleteUser(user._id)}>
-                    <i className="text-[#FF0005] text-[1.3rem] fa-solid fa-trash-can-arrow-up"></i>
+                    {isLoading && LoadingId==user._id ? 
+                    (
+                      <span className="loading loading-bars loading-md text-error"></span>
+                    ) : (
+                      <i className="text-[#FF0005] text-[1.3rem] fa-solid fa-trash-can-arrow-up"></i>
+                    )}
+
                   </button>
                 </div>
               </div>

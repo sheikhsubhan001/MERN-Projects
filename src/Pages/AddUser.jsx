@@ -10,6 +10,7 @@ const AddUser = () => {
     };
 
     const [user, setUser] = useState(users);
+    const [isLoading, setLoading] = useState(false);
     const Navigate = useNavigate();
 
     const inputhandler = (e) => {
@@ -21,6 +22,7 @@ const AddUser = () => {
 
     const submitform = async (e) => {
         e.preventDefault();
+        setLoading(true);
         await axios.post("https://mern-backend-bay.vercel.app/GoTo/Useradd", user)
             .then((response) => {
                 toast.success(response.data.message, { position: "top-center" });
@@ -29,6 +31,7 @@ const AddUser = () => {
             .catch((Error) => {
                 toast.error(Error.message, { position: "top-center" });
             });
+            setLoading(false);
     }
     return (
         <div className='w-full h-[100vh] absolute flex flex-col items-center bg-[#c5c5c5]'>
@@ -40,7 +43,7 @@ const AddUser = () => {
             </header>
             {/* <div className='border-1 '> */}
             <h2 className='text-center py-[2rem] text-shadow-lg'>Add New User</h2>
-            <div className='w-[300px] h-[50vh] rounded-2 border bg-[#fff] shadow-lg'>
+            <div className='w-[300px] h-[50vh] xs:h-[55vh] rounded-2 border bg-[#fff] shadow-lg'>
                 <form className='flex flex-col items-center gap-[1.8vh] mt-[2rem]' onSubmit={submitform}>
                     <label htmlFor="name" className='font-bold'>Name:
                         <input className='form-control w-auto' type="text" onChange={inputhandler} id='name' name='name' required placeholder='Enter your Name...' />
@@ -54,7 +57,13 @@ const AddUser = () => {
                         <input className='form-control w-auto' type="text" onChange={inputhandler} required id='address' name='address' placeholder='Enter Address' />
                     </label>
 
-                    <input type="submit" className='bg-primary btn text-white my-[50px]' />
+                    <button className='bg-[#0000Ff] text-white my-[50px] w-[5.5rem] h-[2.5rem] rounded-2'>
+                        {isLoading ? (
+                            <span className='loading loading-dots loading-lg'></span>
+                        ) : (
+                            <span>Submit</span>
+                        )}
+                        </button>
                 </form>
             </div>
             {/* </div> */}
