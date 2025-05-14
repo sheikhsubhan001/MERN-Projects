@@ -50,54 +50,62 @@ function Home() {
         </Link>
       </header>
       <div className='w-full bg-[#eeeeee] pt-[9vh] border-1 py-[0.3rem] fixed z-1'>
-        <h3 className='text-center py-[1rem] text-shadow-lg'>User Records</h3>
+        <h3 className='Frijole text-center py-[1rem] text-shadow-lg'>User Records</h3>
       </div>
       <div className='bg-[#dddddd] w-full px-[5vw] pt-[10rem] sm:pt-[8rem] pb-[4rem] xs:pb-[3rem] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 overflow-y-auto  overflow-auto scrollbar-hide'>
         {/* records */}
 
-        { isAnimate ? (
-            [...Array(3)].map((_, i) => (
-              <div key={i} className="mt-[1rem] p-4 bg-white rounded-lg shadow-md animate-pulse">
-                <div className="h-4 bg-gray-300 rounded w-1/2 mb-2"></div>
-                <div className="h-4 bg-gray-300 rounded w-3/4 mb-2"></div>
-                <div className="h-4 bg-gray-300 rounded w-2/3"></div>
-              </div>
-            ))
-          ) : (
-            Array.isArray(users) && users.map((user, index) => (
-              <div key={index} className='mt-[1rem] p-4 bg-white rounded-lg shadow-md'>
-                <div className='flex justify-between'>
-                  <h5>{index + 1})</h5>
-                  <div className='flex items-center gap-3'>
-                    <Link to={`/Update/${user._id}`}>
-                      <button>
-                        <i className="text-[1.3rem] fa-solid fa-pen-to-square"></i>
-                      </button>
-                    </Link>
-                    <button onClick={() => DeleteUser(user._id)}>
-                      {isLoading && LoadingId == user._id ?
-                        (
-                          <span className="loading loading-bars loading-md text-error"></span>
-                        ) : (
-                          <i className="text-[#FF0005] text-[1.3rem] fa-solid fa-trash-can-arrow-up"></i>
-                        )}
-
-                    </button>
-                  </div>
+        {isAnimate ? (
+          [...Array(3)].map((_, i) => (
+            <div key={i} className="mt-[1rem] h-[13.5rem] p-4 bg-white rounded-lg shadow-md animate-pulse">
+              <div className="flex justify-between">
+                <div className="h-6 bg-gray-300 rounded w-1/10 mb-2"></div>
+                <div className='flex flex-row gap-1'>
+                  <div className="h-6 bg-gray-300 rounded w-[2rem] mb-2" ></div>
+                  <div className="h-6 bg-gray-300 rounded w-[2rem] mb-2" ></div>
                 </div>
-                <h4 className='text-wrap'>{user.name}</h4>
-                <h6 className='text-wrap'>{user.email}</h6>
-                <p className=' text-wrap pt-[0.5rem]'>{user.address}</p>
               </div>
-            )
+              <div className="h-7 bg-gray-300 rounded w-1/2 mb-2"></div>
+              <div className="h-4 bg-gray-300 rounded w-3/4 mb-4"></div>
+              <div className="h-4 bg-gray-300 rounded w-2/3 mb-2"></div>
+              <div className="h-4 bg-gray-300 rounded w-2/3"></div>
+            </div>
+          ))
+        ) : (
+          Array.isArray(users) && users.map((user, index) => (
+            <div key={index} className='mt-[1rem] h-[13.5rem] p-4 bg-white rounded-lg shadow-md'>
+              <div className='flex justify-between'>
+                <h5>{index + 1})</h5>
+                <div className='flex items-center gap-3'>
+                  <Link to={`/Update/${user._id}`}>
+                    <button>
+                      <i className="text-[1.3rem] fa-solid fa-pen-to-square"></i>
+                    </button>
+                  </Link>
+                  <button onClick={() => DeleteUser(user._id)}>
+                    {isLoading && LoadingId == user._id ?
+                      (
+                        <span className="loading loading-bars loading-md text-error"></span>
+                      ) : (
+                        <i className="text-[#FF0005] text-[1.3rem] fa-solid fa-trash-can-arrow-up"></i>
+                      )}
+
+                  </button>
+                </div>
+              </div>
+              <h4 className='text-wrap'>{user.name}</h4>
+              <h6 className='text-wrap'>{user.email}</h6>
+              <p className=' text-wrap pt-[0.5rem]'>{user.address}</p>
+            </div>
           )
-            )
+          )
+        )
         }
 
 
       </div>
 
-      <footer className='text-center absolute bottom-[0px] border-1 w-full bg-[#eeeeee] md:h-[3rem] md:mt-[1.5rem]'>© All Rights Reserved | Developed by MSH Technology</footer>
+      <footer className='text-center absolute bottom-[0px] border-1 w-full bg-[#eeeeee] md:h-[3rem] md:mt-[1.5rem]'> <strong>©</strong> All Rights Reserved | Developed by MSH Technology</footer>
 
 
     </div>

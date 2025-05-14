@@ -1,5 +1,21 @@
 @import "tailwindcss";
+
 @theme {
     --breakpoint-xs: 454px;
 }
 @plugin "daisyui";
+
+@font-face {
+  font-family: 'Frijole';
+  src: url('./assets/Fonts/Frijole-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.Frijole 
+{
+    font-family: "Frijole";
+}
+
+
+
